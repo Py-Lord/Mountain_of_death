@@ -15,12 +15,9 @@ class MyGame(arcade.Window):
         self.flag_3 = False
         self.flag_4 = True
         self.flag_5 = True
-        self.flag_6 = True
         self.lifes = 3
         self.score = 0 
         self.score_2 = 1
-        self.score_3 = 1
-        self.score_4 = 1
         self.x = 100
         self.y = 154
 
@@ -34,9 +31,9 @@ class MyGame(arcade.Window):
         self.flags_list = arcade.SpriteList()
         self.flags_list2 = arcade.SpriteList()
         self.flags_list3 = arcade.SpriteList()
-        self.ladybug_list = arcade.SpriteList()
-        self.flea_list = arcade.SpriteList()
-        self.beetle_list = arcade.SpriteList()
+        self.frog_list = arcade.SpriteList()
+        self.grasshopper_list = arcade.SpriteList()
+        self.lizard_list = arcade.SpriteList()
 
         self.player_sprite = arcade.AnimatedWalkingSprite() 
         self.player_sprite.center_x = self.x 
@@ -70,7 +67,7 @@ class MyGame(arcade.Window):
             grass_sprite.center_x = x
             grass_sprite.center_y = 90
             self.platforms_list.append(grass_sprite)
-        for x in range(1155, 1348, 64):
+        for x in range(1055, 1248, 64):
             grass_sprite = arcade.Sprite("./Resource/Images/grass.png", 0.5)
             grass_sprite.center_x = x
             grass_sprite.center_y = 154
@@ -80,7 +77,7 @@ class MyGame(arcade.Window):
             grass_sprite.center_x = x
             grass_sprite.center_y = 154
             self.platforms_list.append(grass_sprite)
-        for x in range(3205, 3398, 64):
+        for x in range(3705, 3898, 64):
             grass_sprite = arcade.Sprite("./Resource/Images/grass.png", 0.5)
             grass_sprite.center_x = x
             grass_sprite.center_y = 154
@@ -122,25 +119,35 @@ class MyGame(arcade.Window):
             ground_sprite.center_y = 26 + i
             self.platforms_list.append(ground_sprite)
         
-        for i in range(0, 577, 64):
-            coin_sprite = arcade.Sprite("./Resource/Images/gold.png", 0.5)
-            coin_sprite.center_x = 450 + i
-            coin_sprite.center_y = 144
-            self.coin_list.append(coin_sprite)
-        for x in range(4501, 4822, 64):
+        for x in range(200, 941, 64):
             coin_sprite = arcade.Sprite("./Resource/Images/gold.png", 0.5)
             coin_sprite.center_x = x
             coin_sprite.center_y = 144
+            self.coin_list.append(coin_sprite)
+        for x in range(1119, 1248, 64):
+            coin_sprite = arcade.Sprite("./Resource/Images/gold.png", 0.5)
+            coin_sprite.center_x = x
+            coin_sprite.center_y = 218
+            self.coin_list.append(coin_sprite)
+        for x in range(2228, 2357, 64):
+            coin_sprite = arcade.Sprite("./Resource/Images/gold.png", 0.5)
+            coin_sprite.center_x = x
+            coin_sprite.center_y = 218
+            self.coin_list.append(coin_sprite)
+        for x in range(3769, 3898, 64):
+            coin_sprite = arcade.Sprite("./Resource/Images/gold.png", 0.5)
+            coin_sprite.center_x = x
+            coin_sprite.center_y = 218
             self.coin_list.append(coin_sprite)
 
         self.physics_engine = arcade.PhysicsEnginePlatformer(self.player_sprite, self.platforms_list, gravity_constant=GRAVITY)
 
         grass_hill_sprite = arcade.Sprite("./Resource/Images/grass_hill.png", 0.5)
-        grass_hill_sprite.center_x = 1091
+        grass_hill_sprite.center_x = 991
         grass_hill_sprite.center_y = 154
         self.platforms_list.append(grass_hill_sprite)
         grass_hill_sprite = arcade.Sprite("./Resource/Images/grasshill.png", 0.5)
-        grass_hill_sprite.center_x = 1411
+        grass_hill_sprite.center_x = 1311
         grass_hill_sprite.center_y = 154
         self.platforms_list.append(grass_hill_sprite)
         grass_hill_sprite = arcade.Sprite("./Resource/Images/grass_hill.png", 0.5)
@@ -152,11 +159,11 @@ class MyGame(arcade.Window):
         grass_hill_sprite.center_y = 154
         self.platforms_list.append(grass_hill_sprite)
         grass_hill_sprite = arcade.Sprite("./Resource/Images/grass_hill.png", 0.5)
-        grass_hill_sprite.center_x = 3141
+        grass_hill_sprite.center_x = 3641
         grass_hill_sprite.center_y = 154
         self.platforms_list.append(grass_hill_sprite)
         grass_hill_sprite = arcade.Sprite("./Resource/Images/grasshill.png", 0.5)
-        grass_hill_sprite.center_x = 3461
+        grass_hill_sprite.center_x = 3961
         grass_hill_sprite.center_y = 154
         self.platforms_list.append(grass_hill_sprite)
         for i in range(0, 321, 64):
@@ -171,11 +178,11 @@ class MyGame(arcade.Window):
             self.platforms_list.append(grass_hill_sprite)
 
         self.FLAG = arcade.Sprite("./Resource/Images/flagRed.png", 0.5)
-        self.FLAG.center_x = 1161
+        self.FLAG.center_x = 1061
         self.FLAG.center_y = 218
         self.flags_list.append(self.FLAG)
         Flag = arcade.Sprite("./Resource/Images/flagRed1.png", 0.5)
-        Flag.center_x = 1161
+        Flag.center_x = 1061
         Flag.center_y = 218
         self.flags_list.append(Flag)
         self.FLAG2 = arcade.Sprite("./Resource/Images/flagRed.png", 0.5)
@@ -187,11 +194,11 @@ class MyGame(arcade.Window):
         Flag2.center_y = 218
         self.flags_list2.append(Flag2)
         self.FLAG3 = arcade.Sprite("./Resource/Images/flagRed.png", 0.5)
-        self.FLAG3.center_x = 3210
+        self.FLAG3.center_x = 3710
         self.FLAG3.center_y = 218
         self.flags_list3.append(self.FLAG3)
         Flag3 = arcade.Sprite("./Resource/Images/flagRed1.png", 0.5)
-        Flag3.center_x = 3210
+        Flag3.center_x = 3710
         Flag3.center_y = 218
         self.flags_list3.append(Flag3)
 
@@ -199,32 +206,32 @@ class MyGame(arcade.Window):
         self.exit_sprite.center_x = 4917
         self.exit_sprite.center_y = 154
 
-        self.ladybug_sprite = arcade.Sprite("./Resource/Images/ladybug_2.png", 0.9)
-        self.ladybug_sprite.center_x = 2011
-        self.ladybug_sprite.center_y = 178
-        ladybug_2_sprite = arcade.Sprite("./Resource/Images/ladybug.png", 0.9)
-        ladybug_2_sprite.center_x = 1510
-        ladybug_2_sprite.center_y = 178
-        self.ladybug_list.append(self.ladybug_sprite)
-        self.ladybug_list.append(ladybug_2_sprite)
+        self.grasshopper_sprite = arcade.Sprite("./Resource/Images/grasshopper_2.png", 0.2, angle = -368)
+        self.grasshopper_sprite.center_x = 1894
+        self.grasshopper_sprite.center_y = 164
+        grasshopper_2_sprite = arcade.Sprite("./Resource/Images/grasshopper.png", 0.2, angle = 8)
+        grasshopper_2_sprite.center_x = 1492
+        grasshopper_2_sprite.center_y = 164
+        self.grasshopper_list.append(self.grasshopper_sprite)
+        self.grasshopper_list.append(grasshopper_2_sprite)
 
-        self.flea_sprite = arcade.Sprite("./Resource/Images/flea_2.png", 0.2, angle = 25)
-        self.flea_sprite.center_x = 2504
-        self.flea_sprite.center_y = 174
-        flea_2_sprite = arcade.Sprite("./Resource/Images/flea.png", 0.2, angle = -385)
-        flea_2_sprite.center_x = 3041
-        flea_2_sprite.center_y = 174
-        self.flea_list.append(self.flea_sprite)
-        self.flea_list.append(flea_2_sprite)
+        self.lizard_sprite = arcade.Sprite("./Resource/Images/lizard.png", 0.5)
+        self.lizard_sprite.center_x = 2655
+        self.lizard_sprite.center_y = 164
+        lizard_2_sprite = arcade.Sprite("./Resource/Images/lizard_2.png", 0.5)
+        lizard_2_sprite.center_x = 3395
+        lizard_2_sprite.center_y = 164
+        self.lizard_list.append(self.lizard_sprite)
+        self.lizard_list.append(lizard_2_sprite)
 
-        self.beetle_sprite = arcade.Sprite("./Resource/Images/beetle.png", 0.25)
-        self.beetle_sprite.center_x = 3600
-        self.beetle_sprite.center_y = 164
-        beetle_2_sprite = arcade.Sprite("./Resource/Images/beetle_2.png", 0.25)
-        beetle_2_sprite.center_x = 4200
-        beetle_2_sprite.center_y = 164
-        self.beetle_list.append(self.beetle_sprite)
-        self.beetle_list.append(beetle_2_sprite)
+        self.frog_sprite = arcade.Sprite("./Resource/Images/frog.png", 1)
+        self.frog_sprite.center_x = 4100
+        self.frog_sprite.center_y = 174
+        frog_2_sprite = arcade.Sprite("./Resource/Images/frog2.png", 1)
+        frog_2_sprite.center_x = 4601
+        frog_2_sprite.center_y = 174
+        self.frog_list.append(self.frog_sprite)
+        self.frog_list.append(frog_2_sprite)
     def on_draw(self):
         arcade.start_render()
         self.camera_sprites.use()
@@ -234,9 +241,9 @@ class MyGame(arcade.Window):
         self.player_sprite.draw()
         self.platforms_list.draw()
         self.coin_list.draw()
-        if self.flag == False or self.flag == True: self.ladybug_list[0].draw()
-        if self.flag_2 == False or self.flag_2 == True: self.flea_list[0].draw()
-        if self.flag_3 == False or self.flag_3 == True: self.beetle_list[0].draw()
+        if self.flag_3 == True or self.flag_3 == False: self.frog_list[0].draw()
+        if self.flag_2 == True or self.flag_2 == False: self.lizard_list[0].draw()
+        if self.flag == True or self.flag == False: self.grasshopper_list[0].draw()
         arcade.draw_text(f'Money: {self.score}    Lifes: {self.lifes}', -380 + self.player_sprite.center_x, 250 + self.player_sprite.center_y, arcade.color.BLACK, 20)
         self.exit_sprite.draw()
         self.camera_gui.use()
@@ -247,152 +254,126 @@ class MyGame(arcade.Window):
         self.platforms_list.update()
         self.coin_list.update()
         self.scroll_to_player()
+        
+        if self.lifes == 0:
+            self.game_over()
 
         if self.player_sprite.center_x <= -130:
             self.close()
-        
-        if self.player_sprite.center_x >= 5079:
+        elif self.player_sprite.center_x >= 5079:
             self.close()
 
         coins_hit_list = arcade.check_for_collision_with_list(self.player_sprite, self.coin_list)
         for coin in coins_hit_list:
             coin.remove_from_sprite_lists()
-            self.score += 5
+            self.score += 10
         
-        if self.player_sprite.center_x >= 1161 and self.player_sprite.center_x < 2130 and self.flag_4:
+        if self.player_sprite.center_x >= 1089 and self.player_sprite.center_x < 2198 and self.flag_4:
             self.FLAG.remove_from_sprite_lists()
             self.x = 1189
             self.y = 218
-        elif self.player_sprite.center_x >= 2170 and self.player_sprite.center_x < 3228 and self.flag_5:
+        elif self.player_sprite.center_x >= 2198 and self.player_sprite.center_x < 3738 and self.flag_5:
             self.FLAG2.remove_from_sprite_lists()
-            self.x = 2198
+            self.x = 2698
             self.y = 218
             self.flag_4 = False
-        elif self.player_sprite.center_x >= 3228:
+        elif self.player_sprite.center_x >= 3738:
             self.JUMP_SPEED = 8
             self.FLAG3.remove_from_sprite_lists()
             self.x = 3228
             self.y = 218
             self.flag_5 = False
         
-        if self.flag == False and self.ladybug_list[0].center_x > 1510:
-            self.ladybug_list[0].center_x = self.ladybug_list[0].center_x - 3
-        elif self.flag == False and self.ladybug_list[0].center_x == 1510:
+        if self.flag == False and self.grasshopper_list[0].center_x > 1492:
+            if self.grasshopper_list[0].center_x <= 1894 and self.grasshopper_list[0].center_x >= 1693:
+                self.grasshopper_list[0].center_y += 5
+                self.grasshopper_list[0].center_x -= 3
+            elif self.grasshopper_list[0].center_x < 1693:
+                self.grasshopper_list[0].center_y -= 5
+                self.grasshopper_list[0].center_x -= 3
+        elif self.flag == False and self.grasshopper_list[0].center_x == 1492:
             self.flag = True
-            self.ladybug_sprite.remove_from_sprite_lists()
-            self.ladybug_list[0].center_x = 1510
-        if self.flag == True and self.ladybug_list[0].center_x >= 1510 and self.ladybug_list[0].center_x < 2011:
-            self.ladybug_list[0].center_x = self.ladybug_list[0].center_x + 3
-        elif self.flag == True and self.ladybug_list[0].center_x == 2011:
-            self.ladybug_sprite = arcade.Sprite("./Resource/Images/ladybug_2.png", 0.9)
-            self.ladybug_sprite.center_x = 2011
-            self.ladybug_sprite.center_y = 178
-            self.ladybug_list.insert(0, self.ladybug_sprite)
+            self.grasshopper_sprite.remove_from_sprite_lists()
+            self.grasshopper_list[0].center_x = 1492
+            self.grasshopper_list[0].center_y = 164
+        if self.flag == True and self.grasshopper_list[0].center_x >= 1492 and self.grasshopper_list[0].center_x < 1894:
+            if self.grasshopper_list[0].center_x <= 1696 and self.grasshopper_list[0].center_x >= 1492:
+                self.grasshopper_list[0].center_y += 5
+                self.grasshopper_list[0].center_x += 3
+            elif self.grasshopper_list[0].center_x >= 1696:
+                self.grasshopper_list[0].center_y -= 5
+                self.grasshopper_list[0].center_x += 3
+        elif self.flag == True and self.grasshopper_list[0].center_x == 1894:
+            self.grasshopper_sprite = arcade.Sprite("./Resource/Images/grasshopper_2.png", 0.2)
+            self.grasshopper_sprite.center_x = 1894
+            self.grasshopper_sprite.center_y = 164
+            self.grasshopper_list.insert(0, self.grasshopper_sprite)
             self.flag = False
 
-        if self.player_sprite.collides_with_sprite(self.ladybug_list[0]) and self.player_sprite.center_y >= 200 and self.score_2 == 1:
-            self.score_2 += 1
-            self.player_sprite.change_y = 8
-        elif self.player_sprite.collides_with_sprite(self.ladybug_list[0]) and self.player_sprite.center_y >= 200 and self.flag != 'Kill' and self.score_2 == 2:
-            self.flag = 'Kill'
-            self.player_sprite.change_y = 8
-            coin_sprite = arcade.Sprite("./Resource/Images/gold.png", 0.5)
-            coin_sprite.center_x = self.ladybug_list[0].center_x + 80 
-            coin_sprite.center_y = 144 
-            self.coin_list.append(coin_sprite)
-            coin_sprite = arcade.Sprite("./Resource/Images/gold.png", 0.5)
-            coin_sprite.center_x = self.ladybug_list[0].center_x + 100 
-            coin_sprite.center_y = 144
-            self.coin_list.append(coin_sprite)
-        elif self.player_sprite.collides_with_sprite(self.ladybug_list[0]) and self.player_sprite.center_y < 200 and (self.flag == True or self.flag == False):
-            self.lifes -= 1
-            self.player_sprite.center_x = self.x
-            self.player_sprite.center_y = self.y
-        
-        if self.flag_2 == False and self.flea_list[0].center_x > 2504:
-            if self.flea_list[0].center_y == 174:
-                self.flea_list[0].center_x = self.flea_list[0].center_x - 3
-            if self.flea_list[0].center_x <= 2753 and self.flea_list[0].center_x >= 2645:
-                self.flea_list[0].center_y += 10
-                self.flea_list[0].center_x -= 3
-            elif self.flea_list[0].center_x <= 2645 and self.flea_list[0].center_y != 174:
-                self.flea_list[0].center_y -= 10
-                self.flea_list[0].center_x -= 3
-        elif self.flag_2 == False and self.flea_list[0].center_x == 2504:
-            self.flag_2 = True
-            self.flea_sprite.remove_from_sprite_lists()
-            self.flea_list[0].center_x = 2504
-        if self.flag_2 == True and self.flea_list[0].center_x >= 2504 and self.flea_list[0].center_x < 3041:
-            if self.flea_list[0].center_y == 174:
-                self.flea_list[0].center_x = self.flea_list[0].center_x + 3
-            if self.flea_list[0].center_x <= 2907 and self.flea_list[0].center_x >= 2799:
-                self.flea_list[0].center_y += 10
-                self.flea_list[0].center_x += 3
-            elif self.flea_list[0].center_x >= 2907 and self.flea_list[0].center_y != 174:
-                self.flea_list[0].center_y -= 10
-                self.flea_list[0].center_x += 3
-        elif self.flag_2 == True and self.flea_list[0].center_x == 3041:
-            self.flea_sprite = arcade.Sprite("./Resource/Images/flea_2.png", 0.2, angle = 25)
-            self.flea_sprite.center_x = 3041
-            self.flea_sprite.center_y = 174
-            self.flea_list.insert(0, self.flea_sprite)
-            self.flag_2 = False
-
-        if self.flea_list[0].center_y > 174 and self.player_sprite.collides_with_sprite(self.flea_list[0]):
+        if self.player_sprite.collides_with_sprite(self.grasshopper_list[0]):
             self.player_sprite.change_y = 20
             self.lifes -= 0.1 #self.life.remove_from_sprites_lists() #self.lifes -= 2
-        elif self.player_sprite.collides_with_sprite(self.flea_list[0]) and self.player_sprite.center_y >= 220 and self.score_3 == 1:
-            self.score_3 += 1
-            self.player_sprite.change_y = 8
-        elif self.player_sprite.collides_with_sprite(self.flea_list[0]) and self.player_sprite.center_y >= 220 and self.flag_2 != 'Kill' and self.score_3 == 2:
-            self.flag_2 = 'Kill'
-            self.player_sprite.change_y = 8
-            for i in range(20, 61, 20):
-                coin_sprite = arcade.Sprite("./Resource/Images/gold.png", 0.5)
-                coin_sprite.center_x = self.flea_list[0].center_x + 60 + i 
-                coin_sprite.center_y = 144 
-                self.coin_list.append(coin_sprite)
-        elif self.player_sprite.collides_with_sprite(self.flea_list[0]) and self.player_sprite.center_y < 220 and (self.flag_2 == True or self.flag_2 == False):
-            self.lifes -= 1
-            self.player_sprite.center_x = self.x
-            self.player_sprite.center_y = self.y
-
-        if self.flag_3 == False and self.beetle_list[0].center_x > 3600:
-            self.beetle_list[0].center_x = self.beetle_list[0].center_x - 3
-        elif self.flag_3 == False and self.beetle_list[0].center_x == 3600:
+        
+        if self.flag_2 == False and self.lizard_list[0].center_x > 2655:
+            self.lizard_list[0].center_x = self.lizard_list[0].center_x - 4
+        elif self.flag_2 == False and self.lizard_list[0].center_x == 2655:
+            self.flag_2 = True
+            self.lizard_sprite.remove_from_sprite_lists()
+            self.lizard_list[0].center_x = 2655
+        if self.flag_2 == True and self.lizard_list[0].center_x >= 2655 and self.lizard_list[0].center_x < 3395:
+            self.lizard_list[0].center_x = self.lizard_list[0].center_x + 4
+        elif self.flag_2 == True and self.lizard_list[0].center_x == 3395:
+            self.lizard_sprite = arcade.Sprite("./Resource/Images/lizard.png", 0.5)
+            self.lizard_sprite.center_x = 3395
+            self.lizard_sprite.center_y = 164
+            self.lizard_list.insert(0, self.lizard_sprite)
+            self.flag_2 = False
+        
+        if self.player_sprite.collides_with_sprite(self.lizard_list[0]):
+            self.player_sprite.change_y = 20
+            self.lifes -= 0.1 #self.life.remove_from_sprites_lists() #self.lifes -= 2
+        
+        if self.flag_3 == False and self.frog_list[0].center_x > 4100:
+            if self.frog_list[0].center_x <= 4601 and self.frog_list[0].center_x >= 4477:
+                self.frog_list[0].center_y += 5
+                self.frog_list[0].center_x -= 3
+            elif self.frog_list[0].center_x < 4477 and self.frog_list[0].center_x >= 4349:
+                self.frog_list[0].center_y -= 5
+                self.frog_list[0].center_x -= 3
+            if self.frog_list[0].center_x <= 4349 and self.frog_list[0].center_x >= 4224:
+                self.frog_list[0].center_y += 5
+                self.frog_list[0].center_x -= 3
+            elif self.frog_list[0].center_x < 4224:
+                self.frog_list[0].center_y -= 5
+                self.frog_list[0].center_x -= 3
+        elif self.flag_3 == False and self.frog_list[0].center_x == 4100:
             self.flag_3 = True
-            self.beetle_sprite.remove_from_sprite_lists()
-            self.beetle_list[0].center_x = 3600
-        if self.flag_3 == True and self.beetle_list[0].center_x >= 3600 and self.beetle_list[0].center_x < 4200:
-            self.beetle_list[0].center_x = self.beetle_list[0].center_x + 3
-        elif self.flag_3 == True and self.beetle_list[0].center_x == 4200:
-            self.beetle_sprite = arcade.Sprite("./Resource/Images/beetle.png", 0.25)
-            self.beetle_sprite.center_x = 4200
-            self.beetle_sprite.center_y = 164
-            self.beetle_list.insert(0, self.beetle_sprite)
+            self.frog_sprite.remove_from_sprite_lists()
+            self.frog_list[0].center_x = 4100
+            self.frog_list[0].center_y = 164
+        if self.flag_3 == True and self.frog_list[0].center_x >= 4100 and self.frog_list[0].center_x < 4601:
+            if self.frog_list[0].center_x <= 4224 and self.frog_list[0].center_x >= 4100:
+                self.frog_list[0].center_y += 5
+                self.frog_list[0].center_x += 3
+            elif self.frog_list[0].center_x > 4224 and self.frog_list[0].center_x < 4349:
+                self.frog_list[0].center_y -= 5
+                self.frog_list[0].center_x += 3
+            if self.frog_list[0].center_x >= 4349 and self.frog_list[0].center_x <= 4473:
+                self.frog_list[0].center_y += 5
+                self.frog_list[0].center_x += 3
+            elif self.frog_list[0].center_x > 4473:
+                self.frog_list[0].center_y -= 5
+                self.frog_list[0].center_x += 3
+        elif self.flag_3 == True and self.frog_list[0].center_x == 4601:
+            self.frog_sprite = arcade.Sprite("./Resource/Images/frog.png", 1)
+            self.frog_sprite.center_x = 4601
+            self.frog_sprite.center_y = 174
+            self.frog_list.insert(0, self.frog_sprite)
             self.flag_3 = False
-
-        if self.player_sprite.collides_with_sprite(self.beetle_list[0]) and self.player_sprite.center_y >= 218 and self.score_4 == 1:
-            self.score_4 += 1
-            self.player_sprite.change_y = 8
-        elif self.player_sprite.collides_with_sprite(self.beetle_list[0]) and self.player_sprite.center_y >= 218 and self.flag_3 != 'Kill' and self.score_4 == 2:
-            self.flag_3 = 'Kill'
-            self.player_sprite.change_y = 8
-            coin_sprite = arcade.Sprite("./Resource/Images/gold.png", 0.5)
-            coin_sprite.center_x = self.beetle_list[0].center_x + 80 
-            coin_sprite.center_y = 144 
-            self.coin_list.append(coin_sprite)
-            coin_sprite = arcade.Sprite("./Resource/Images/gold.png", 0.5)
-            coin_sprite.center_x = self.beetle_list[0].center_x + 100 
-            coin_sprite.center_y = 144
-            self.coin_list.append(coin_sprite)
-        elif self.player_sprite.collides_with_sprite(self.beetle_list[0]) and self.player_sprite.center_y < 218 and (self.flag_3 == True or self.flag_3 == False):
-            self.lifes -= 1
-            self.player_sprite.center_x = self.x
-            self.player_sprite.center_y = self.y  
-
-        if self.lifes < 1:
-            self.game_over()
+        
+        if self.player_sprite.collides_with_sprite(self.frog_list[0]):
+            self.player_sprite.change_y = 15
+            self.lifes -= 0.05 #self.life.remove_from_sprites_lists() #self.lifes -= 1
     def game_over(self):
         arcade.close_window()
         arcade.open_window(800, 600, 'Game Over')
@@ -421,7 +402,6 @@ class MyGame(arcade.Window):
         position = self.player_sprite.center_x - self.width / 2, \
             self.player_sprite.center_y - self.height / 2
         self.camera_sprites.move_to(position, 0.1)
-        
 window = MyGame(800, 600, "Super Game")
 window.setup()
 arcade.run()
