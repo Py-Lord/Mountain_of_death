@@ -422,7 +422,6 @@ class MyGame(arcade.Window):
             self.lifes -= 1
             self.player_sprite.center_x = self.x
             self.player_sprite.center_y = self.y
-
     def on_key_press(self, key, modifiers):
         if key == arcade.key.UP:
             if self.physics_engine.can_jump():

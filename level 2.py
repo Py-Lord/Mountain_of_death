@@ -127,10 +127,10 @@ class MyGame(arcade.Window):
 
         self.komar_sprite = arcade.Sprite("./Resource/Images/komar.png", 0.4)
         self.komar_sprite.center_x = 1990
-        self.komar_sprite.center_y = 164
+        self.komar_sprite.center_y = 186
         komar_2_sprite = arcade.Sprite("./Resource/Images/komar_2.png", 0.4)
         komar_2_sprite.center_x = 1490
-        komar_2_sprite.center_y = 164
+        komar_2_sprite.center_y = 186
         self.komar_list.append(self.komar_sprite)
         self.komar_list.append(komar_2_sprite)
 
@@ -293,7 +293,7 @@ class MyGame(arcade.Window):
         elif self.flag == True and self.komar_list[0].center_x == 1990:
             self.komar_sprite = arcade.Sprite("./Resource/Images/komar.png", 0.4)
             self.komar_sprite.center_x = 1990
-            self.komar_sprite.center_y = 164
+            self.komar_sprite.center_y = 186
             self.komar_list.insert(0, self.komar_sprite)
             self.flag = False
         
