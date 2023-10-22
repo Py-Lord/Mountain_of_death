@@ -4,7 +4,7 @@ MOVEMENT_SPEED = 2.1
 JUMP_SPEED = 8
 GRAVITY = 0.35
 
-class MyGame(arcade.Window):
+class Level(arcade.Window):
     def __init__(self, width, height, title):
         super().__init__(width, height, title)
 
@@ -249,8 +249,6 @@ class MyGame(arcade.Window):
         Flag2.center_x = 3040
         Flag2.center_y = 857
         self.flags_list2.append(Flag2)
-
-
     def on_draw(self):
         arcade.start_render()
         self.camera_sprites.use()
@@ -284,6 +282,7 @@ class MyGame(arcade.Window):
 
         if self.player_sprite.center_x > 4512:
             self.close()
+            from level_2 import Level_2
 
         if self.flag == False and self.bee_list[0].center_x > 1460:
             self.bee_list[0].center_x = self.bee_list[0].center_x - 2
@@ -446,6 +445,6 @@ class MyGame(arcade.Window):
         self.camera_sprites.resize(int(width), int(height))
         self.camera_gui.resize(int(width), int(height))
         
-window = MyGame(800, 600, "Super Game")
+window = Level(800, 600, "Super Game")
 window.setup()
 arcade.run()

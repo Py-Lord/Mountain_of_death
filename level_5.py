@@ -4,7 +4,7 @@ MOVEMENT_SPEED = 2.1
 JUMP_SPEED = 8
 GRAVITY = 0.35
 
-class MyGame(arcade.Window):
+class Level_5(arcade.Window):
     def __init__(self, width, height, title):
         super().__init__(width, height, title)
 
@@ -260,8 +260,10 @@ class MyGame(arcade.Window):
 
         if self.player_sprite.center_x <= -130:
             self.close()
+            from level_4 import Level_4
         elif self.player_sprite.center_x >= 5079:
             self.close()
+            from level_6 import Level_6
 
         coins_hit_list = arcade.check_for_collision_with_list(self.player_sprite, self.coin_list)
         for coin in coins_hit_list:
@@ -402,6 +404,6 @@ class MyGame(arcade.Window):
         position = self.player_sprite.center_x - self.width / 2, \
             self.player_sprite.center_y - self.height / 2
         self.camera_sprites.move_to(position, 0.1)
-window = MyGame(800, 600, "Super Game")
+window = Level_5(800, 600, "Super Game")
 window.setup()
 arcade.run()
