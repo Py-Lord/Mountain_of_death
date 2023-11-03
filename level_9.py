@@ -3,7 +3,7 @@ import arcade
 JUMP_SPEED = 8
 GRAVITY = 0.35
 
-class Level_8(arcade.Window):
+class Level_9(arcade.Window):
     def __init__(self, width, height, title):
         super().__init__(width, height, title)
 
@@ -14,11 +14,7 @@ class Level_8(arcade.Window):
         self.flag_3 = False
         self.flag_4 = True
         self.flag_5 = True
-        self.flag_6 = True
-        self.flag_7 = False
-        self.flag_9 = 'q'
-        self.flag_10 = False
-        self.flag_11 = True
+        self.flag_6 = False
         self.lifes = 3
         self.score = 0 
         self.score_2 = 1
@@ -37,10 +33,9 @@ class Level_8(arcade.Window):
         self.flags_list = arcade.SpriteList()
         self.flags_list2 = arcade.SpriteList()
         self.flags_list3 = arcade.SpriteList()
-        self.rabbit_list = arcade.SpriteList()
-        self.hedgehog_list = arcade.SpriteList()
-        self.shell_list = arcade.SpriteList()
-        self.fox_list = arcade.SpriteList()
+        self.hog_list = arcade.SpriteList()
+        self.wolf_list = arcade.SpriteList()
+        self.eagle_list = arcade.SpriteList()
 
         self.player_sprite = arcade.AnimatedWalkingSprite() 
         self.player_sprite.center_x = self.x 
@@ -69,11 +64,11 @@ class Level_8(arcade.Window):
         self.player_sprite.texture = self.player_sprite.stand_left_textures[0]
         self.player_sprite.scale = 0.5
 
-        for x in range(33, 2485, 64):
-            grass_sprite = arcade.Sprite("./Resource/Images/grass.png", 0.5)
-            grass_sprite.center_x = x
-            grass_sprite.center_y = 90
-            self.platforms_list.append(grass_sprite)
+        for x in range(33, 5000, 64):
+            snow_grass = arcade.Sprite("./Resource/Images/snow_grass.png", 0.92)
+            snow_grass.center_x = x
+            snow_grass.center_y = 90
+            self.platforms_list.append(snow_grass)
         for x in range(1055, 1248, 64):
             grass_sprite = arcade.Sprite("./Resource/Images/grass.png", 0.5)
             grass_sprite.center_x = x
@@ -85,11 +80,11 @@ class Level_8(arcade.Window):
             grass_sprite.center_y = 154
             self.platforms_list.append(grass_sprite)
 
-        for x in range(33, 2485, 64):
-            ground_sprite = arcade.Sprite("./Resource/Images/ground.png", 0.5)
-            ground_sprite.center_x = x
-            ground_sprite.center_y = 26
-            self.platforms_list.append(ground_sprite)
+        for x in range(33, 5000, 64):
+            snow_ground = arcade.Sprite("./Resource/Images/snow_ground.png", 0.92)
+            snow_ground.center_x = x
+            snow_ground.center_y = 26
+            self.platforms_list.append(snow_ground)
         for i in range(0, 321, 64):
             ground_sprite = arcade.Sprite("./Resource/Images/ground.png", 0.5)
             ground_sprite.center_x = -31 - i
@@ -121,36 +116,6 @@ class Level_8(arcade.Window):
             ground_sprite.center_y = 26 + i
             self.platforms_list.append(ground_sprite)
         
-        for x in range(3681, 4992, 64):
-            snow_grass = arcade.Sprite("./Resource/Images/snow_grass.png", 0.92)
-            snow_grass.center_x = x
-            snow_grass.center_y = 90
-            self.platforms_list.append(snow_grass)
-        for x in range(3681, 4992, 64):
-            snow_ground = arcade.Sprite("./Resource/Images/snow_ground.png", 0.92)
-            snow_ground.center_x = x
-            snow_ground.center_y = 26
-            self.platforms_list.append(snow_ground)
-        for x in range(2485, 3299, 64):
-            snow_grass = arcade.Sprite("./Resource/Images/snow_grass.png", 0.92)
-            snow_grass.center_x = x
-            snow_grass.center_y = 90
-            self.platforms_list.append(snow_grass)
-        for x in range(2485, 3299, 64):
-            snow_ground = arcade.Sprite("./Resource/Images/snow_ground.png", 0.92)
-            snow_ground.center_x = x
-            snow_ground.center_y = 26
-            self.platforms_list.append(snow_ground)
-        for x in range(3363, 3618, 64):
-            snow_ground = arcade.Sprite("./Resource/Images/snow_ground.png", 0.92)
-            snow_ground.center_x = x
-            snow_ground.center_y = 90
-            self.platforms_list.append(snow_ground)
-        for x in range(3299, 3682, 64):
-            snow_ground = arcade.Sprite("./Resource/Images/snow_ground.png", 0.92)
-            snow_ground.center_x = x
-            snow_ground.center_y = 26
-            self.platforms_list.append(snow_ground)
         for x in range(3362, 3555, 64):
             snow_grass = arcade.Sprite("./Resource/Images/snow_grass.png", 0.92)
             snow_grass.center_x = x
@@ -252,45 +217,32 @@ class Level_8(arcade.Window):
         self.exit_sprite.center_x = 4917
         self.exit_sprite.center_y = 154
 
-        rabbit_sprite = arcade.Sprite("./Resource/Images/rabbit.png", 0.5, angle = 45)
-        rabbit_sprite.center_x = 2056
-        rabbit_sprite.center_y = 70
-        rabbit_sprite_2 = arcade.Sprite("./Resource/Images/rabbit_2.png", 0.4)
-        rabbit_sprite_2.center_x = 1780
-        rabbit_sprite_2.center_y = 168
-        rabbit_sprite_3 = arcade.Sprite("./Resource/Images/rabbit_3.png", 0.4)
-        rabbit_sprite_3.center_x = 1376
-        rabbit_sprite_3.center_y = 168
-        self.rabbit_list.append(rabbit_sprite)
-        self.rabbit_list.append(rabbit_sprite_2)
-        self.rabbit_list.append(rabbit_sprite_3)
+        hog_sprite = arcade.Sprite("./Resource/Images/hog.png", 0.4)
+        hog_sprite.center_x = 1979
+        hog_sprite.center_y = 194
+        hog_sprite_2 = arcade.Sprite("./Resource/Images/hog_2.png", 0.4)
+        hog_sprite_2.center_x = 1451
+        hog_sprite_2.center_y = 194
+        self.hog_list.append(hog_sprite)
+        self.hog_list.append(hog_sprite_2)
 
-        hedgehog_sprite = arcade.Sprite("./Resource/Images/hedgehog_2.png", 0.3)
-        hedgehog_sprite.center_x = 3188
-        hedgehog_sprite.center_y = 180
-        hedgehog_sprite_2 = arcade.Sprite("./Resource/Images/hedgehog.png", 0.3)
-        hedgehog_sprite_2.center_x = 2528
-        hedgehog_sprite_2.center_y = 180
-        self.hedgehog_list.append(hedgehog_sprite)
-        self.hedgehog_list.append(hedgehog_sprite_2)
+        wolf_sprite = arcade.Sprite("./Resource/Images/wolf.png", 0.5)
+        wolf_sprite.center_x = 3150
+        wolf_sprite.center_y = 194
+        wolf_sprite_2 = arcade.Sprite("./Resource/Images/wolf_2.png", 0.5)
+        wolf_sprite_2.center_x = 2570
+        wolf_sprite_2.center_y = 194
+        self.wolf_list.append(wolf_sprite)
+        self.wolf_list.append(wolf_sprite_2)
 
-        shell_sprite = arcade.Sprite("./Resource/Images/hedgehog_shell.png", 0.2)
-        shell_sprite.center_x = 2528
-        shell_sprite.center_y = 500
-        shell_sprite_2 = arcade.Sprite("./Resource/Images/hedgehog_shell_2.png", 0.2)
-        shell_sprite_2.center_x = 2528
-        shell_sprite_2.center_y = 174
-        self.shell_list.append(shell_sprite)
-        self.shell_list.append(shell_sprite_2)
-
-        fox_sprite = arcade.Sprite("./Resource/Images/fox_2.png", 0.44)
-        fox_sprite.center_x = 4700
-        fox_sprite.center_y = 60
-        fox_sprite_2 = arcade.Sprite("./Resource/Images/fox.png", 0.44)
-        fox_sprite_2.center_x = 3761
-        fox_sprite_2.center_y = 106
-        self.fox_list.append(fox_sprite)
-        self.fox_list.append(fox_sprite_2)
+        eagle_sprite = arcade.Sprite("./Resource/Images/eagle_2.png", 0.4)
+        eagle_sprite.center_x = 3700
+        eagle_sprite.center_y = 500
+        eagle_sprite_2 = arcade.Sprite("./Resource/Images/eagle.png", 0.4)
+        eagle_sprite_2.center_x = 4702
+        eagle_sprite_2.center_y = 500
+        self.eagle_list.append(eagle_sprite)
+        self.eagle_list.append(eagle_sprite_2)
     def on_draw(self):
         arcade.start_render()
         self.camera_sprites.use()
@@ -298,10 +250,9 @@ class Level_8(arcade.Window):
         self.flags_list2[0].draw()
         self.flags_list3[0].draw()
         self.player_sprite.draw()
-        self.rabbit_list[0].draw()
-        if (self.flag_7 or not self.flag_7) and self.flag_6: self.hedgehog_list[0].draw()
-        else: self.shell_list[0].draw()
-        self.fox_list[0].draw()
+        self.hog_list[0].draw()
+        self.wolf_list[0].draw()
+        self.eagle_list[0].draw()
         self.platforms_list.draw()
         self.coin_list.draw()
         arcade.draw_text(f'Money: {self.score}    Lifes: {self.lifes}', -380 + self.player_sprite.center_x, 250 + self.player_sprite.center_y, arcade.color.BLACK, 20)
@@ -312,20 +263,18 @@ class Level_8(arcade.Window):
         self.physics_engine.update()
         self.player_sprite.update_animation()
         self.platforms_list.update()
-        self.rabbit_list.update()
-        self.shell_list.update()
         self.coin_list.update()
         self.scroll_to_player()
-
+        
         if self.lifes == 0:
             self.game_over()
 
         if self.player_sprite.center_x <= -130:
             self.close()
-            from level_7 import Level_7
+            from level_8 import Level_8
         elif self.player_sprite.center_x >= 5079:
             self.close()
-            from level_9 import Level_9
+            #from level_10 import Level_10
 
         coins_hit_list = arcade.check_for_collision_with_list(self.player_sprite, self.coin_list)
         for coin in coins_hit_list:
@@ -346,146 +295,82 @@ class Level_8(arcade.Window):
             self.x = 3228
             self.y = 218
             self.flag_5 = False
-        
-        if self.flag:
-            if self.flag_3 == False:
-                self.rabbit_list[0].center_x -= 1.5
-                self.rabbit_list[0].center_y += 1.5
-                self.rabbit_list[0].change_angle = 0.15
-            elif self.flag_3 == True and self.rabbit_list[0].center_y > 174:
-                self.rabbit_list[0].center_x -= 1.5
-                self.rabbit_list[0].center_y -= 1.5
-            elif self.flag_3 == True and self.rabbit_list[0].center_y <= 174:
-                self.rabbit_list[0].remove_from_sprite_lists()
-                self.flag_3 = 'kill'
-            elif self.flag_3 == 'kill':
-                if not self.flag_2 and self.rabbit_list[0].center_x > 1376:
-                    self.rabbit_list[0].center_x -= 4
-                elif not self.flag_2 and self.rabbit_list[0].center_x == 1376:
-                    self.rabbit_list[0].remove_from_sprite_lists()
-                    self.flag_2 = True
-                    self.rabbit_list[0].center_x = 1376
-                if self.flag_2 and self.rabbit_list[0].center_x < 2056:
-                    self.rabbit_list[0].center_x += 4
-                elif self.flag_2 and self.rabbit_list[0].center_x == 2056:
-                    rabbit_sprite_2 = arcade.Sprite("./Resource/Images/rabbit_2.png", 0.4)
-                    rabbit_sprite_2.center_x = 2056
-                    rabbit_sprite_2.center_y = 168
-                    self.rabbit_list.insert(0, rabbit_sprite_2)
-                    self.flag_2 = False
-        if self.rabbit_list[0].collides_with_sprite(self.player_sprite):
-            if self.player_sprite.center_y >= 210:
-                self.player_sprite.change_y = 8
-            else:
-                self.lifes -= 1
-                self.player_sprite.center_x = self.x
-                self.player_sprite.center_y = self.y
-        
-        if self.player_sprite.center_x >= 1700:
-            self.flag = True
-        
-        if self.rabbit_list[0].center_y >= 250:
-            self.flag_3 = True
-            self.rabbit_list[0].change_angle = 0
 
-        if self.flag_6:
-            if self.flag_7 == False and self.hedgehog_list[0].center_x > 2528:
-                self.hedgehog_list[0].center_x -= 2
-            elif self.flag_7 == False and self.hedgehog_list[0].center_x == 2528:
-                self.flag_7 = True
-                self.hedgehog_list[0].remove_from_sprite_lists()
-                self.hedgehog_list[0].center_x = 2528
-            if self.flag_7 == True and self.hedgehog_list[0].center_x >= 2528 and self.hedgehog_list[0].center_x < 3188:
-                self.hedgehog_list[0].center_x += 2
-            elif self.flag_7 == True and self.hedgehog_list[0].center_x == 3188:
-                hedgehog_sprite = arcade.Sprite("./Resource/Images/hedgehog_2.png", 0.3)
-                hedgehog_sprite.center_x = 3188
-                hedgehog_sprite.center_y = 174
-                self.hedgehog_list.insert(0, hedgehog_sprite)
-                self.flag_7 = False
-        else:
-            if self.flag_7 == False and self.shell_list[0].center_x > 2528:
-                self.shell_list[0].center_x -= 3
-                self.shell_list[0].change_angle = 5
-            elif self.flag_7 == False and self.shell_list[0].center_x == 2528:
-                self.flag_7 = True
-                self.shell_list[0].remove_from_sprite_lists()
-                self.shell_list[0].center_x = 2528
-            if self.flag_7 == True and self.shell_list[0].center_x >= 2528 and self.shell_list[0].center_x < 3188:
-                self.shell_list[0].center_x += 3
-                self.shell_list[0].change_angle = 5
-            elif self.flag_7 == True and self.shell_list[0].center_x == 3188:
-                shell_sprite = arcade.Sprite("./Resource/Images/hedgehog_shell.png", 0.2)
-                shell_sprite.center_x = 3188
-                shell_sprite.center_y = 174
-                self.shell_list.insert(0, shell_sprite)
-                self.flag_7 = False
-            if self.player_sprite.collides_with_sprite(self.shell_list[0]) and self.player_sprite.center_y >= 184:
-                self.player_sprite.change_y = 8
-            elif self.player_sprite.collides_with_sprite(self.shell_list[0]) and self.player_sprite.center_y < 184:
-                self.lifes -= 1
-                self.player_sprite.center_x = self.x 
-                self.player_sprite.center_y = self.y
-            if self.shell_list[0].center_x == self.flag_8 and self.flag_9 == 'q': self.flag_9 = 'qq' 
-            elif self.shell_list[0].center_x == self.flag_8 and self.flag_9 == 'qq': self.flag_9 = 'qqq'
-            elif self.shell_list[0].center_x == self.flag_8 and self.flag_9 == 'qqq': self.flag_9 = 'qqqq'
-            elif self.shell_list[0].center_x == self.flag_8 and self.flag_9 == 'qqqq':    
-                self.flag_6 = True
-                self.flag_9 = 'q'
-                self.hedgehog_list[0].center_y = 174
-                    
-        if self.player_sprite.collides_with_sprite(self.hedgehog_list[0]) and self.player_sprite.center_y >= 184:
+        if self.player_sprite.collides_with_sprite(self.hog_list[0]) and self.player_sprite.center_y > 190:
             self.player_sprite.change_y = 8
-            self.flag_6 = False
-            self.hedgehog_list[0].center_y = 0
-            if self.hedgehog_list[0].center_x % 3 == 0: self.shell_list[0].center_x = self.hedgehog_list[0].center_x - 1
-            elif (self.hedgehog_list[0].center_x + 1) % 3 == 0: self.shell_list[0].center_x = self.hedgehog_list[0].center_x
-            elif (self.hedgehog_list[0].center_x + 2) % 3 == 0: self.shell_list[0].center_x = self.hedgehog_list[0].center_x + 1
-            self.shell_list[0].center_y = 174
-            self.flag_8 = self.shell_list[0].center_x
-        elif self.player_sprite.collides_with_sprite(self.hedgehog_list[0]) and self.player_sprite.center_y < 184:
+        elif self.player_sprite.collides_with_sprite(self.hog_list[0]) and self.player_sprite.center_y <= 190:
+            self.player_sprite.center_x = self.x
+            self.player_sprite.center_y = self.y
             self.lifes -= 1
-            self.player_sprite.center_x = self.x 
-            self.player_sprite.center_y = self.y 
         
-        if self.flag_10:
-            if self.flag_11 and self.fox_list[0].center_x >= 4450:
-                self.fox_list[0].center_x -= 3
-                self.fox_list[0].center_y += 2
-            elif self.flag_11 and self.fox_list[0].center_x >= 4200:
-                self.fox_list[0].center_x -= 3
-                self.fox_list[0].center_y -= 2
-            elif self.flag_11 and self.fox_list[0].center_x >= 3950:
-                self.fox_list[0].center_x -= 3
-                self.fox_list[0].center_y += 2
-            elif self.flag_11 and self.fox_list[0].center_x > 3761:
-                self.fox_list[0].center_x -= 3
-                self.fox_list[0].center_y -= 2
-            elif self.flag_11 and self.fox_list[0].center_x == 3761:
-                self.fox_list[0].remove_from_sprite_lists()
-                self.fox_list[0].center_x = 3761
-                self.flag_11 = False
-            elif not self.flag_11 and self.fox_list[0].center_x <= 3950:
-                self.fox_list[0].center_x += 3
-                self.fox_list[0].center_y += 2
-            elif not self.flag_11 and self.fox_list[0].center_x <= 4200:
-                self.fox_list[0].center_x += 3
-                self.fox_list[0].center_y -= 2
-            elif not self.flag_11 and self.fox_list[0].center_x <= 4450:
-                self.fox_list[0].center_x += 3
-                self.fox_list[0].center_y += 2
-            elif not self.flag_11 and self.fox_list[0].center_x < 4700:
-                self.fox_list[0].center_x += 3
-                self.fox_list[0].center_y -= 2
-            elif not self.flag_11 and self.fox_list[0].center_x == 4700:
-                fox_sprite = arcade.Sprite("./Resource/Images/fox_2.png", 0.44)
-                fox_sprite.center_x = 4700
-                fox_sprite.center_y = 60
-                self.fox_list.insert(0, fox_sprite)
-                self.flag_11 = True
-
-        if self.player_sprite.center_x >= 4400:
-            self.flag_10 = True
+        if self.hog_list[0].center_x >= 1451 and self.hog_list[0].center_x <= 1979 and self.player_sprite.center_x > 1350:
+            self.hog_list[0].center_x -= (self.hog_list[0].center_x - self.player_sprite.center_x) // 100
+        if str(self.hog_list[0].center_x - self.player_sprite.center_x)[0] == '-' and not self.flag:
+            center_x = self.hog_list[0].center_x
+            self.hog_list[0].remove_from_sprite_lists()
+            self.hog_list[0].center_x = center_x
+            self.flag = True
+        if str(self.hog_list[0].center_x - self.player_sprite.center_x)[0] != '-' and self.flag:
+            hog_sprite = arcade.Sprite("./Resource/Images/hog.png", 0.4)
+            hog_sprite.center_x = self.hog_list[0].center_x
+            hog_sprite.center_y = 194
+            self.hog_list.insert(0, hog_sprite)
+            self.flag = False
+        
+        if self.player_sprite.collides_with_sprite(self.wolf_list[0]) and self.player_sprite.center_y > 190:
+            self.player_sprite.change_y = 8
+        elif self.player_sprite.collides_with_sprite(self.wolf_list[0]) and self.player_sprite.center_y <= 190:
+            self.player_sprite.center_x = self.x
+            self.player_sprite.center_y = self.y
+            self.lifes -= 1
+        
+        if self.wolf_list[0].center_x >= 2570 and self.wolf_list[0].center_x <= 3150 and self.player_sprite.center_x > 2500:
+            self.wolf_list[0].center_x -= (self.wolf_list[0].center_x - self.player_sprite.center_x) // 50
+        if str(self.wolf_list[0].center_x - self.player_sprite.center_x)[0] == '-' and not self.flag_2:
+            center_x = self.wolf_list[0].center_x
+            self.wolf_list[0].remove_from_sprite_lists()
+            self.wolf_list[0].center_x = center_x
+            self.flag_2 = True
+        if str(self.wolf_list[0].center_x - self.player_sprite.center_x)[0] != '-' and self.flag_2:
+            wolf_sprite = arcade.Sprite("./Resource/Images/wolf.png", 0.5)
+            wolf_sprite.center_x = self.wolf_list[0].center_x
+            wolf_sprite.center_y = 194
+            self.wolf_list.insert(0, wolf_sprite)
+            self.flag_2 = False
+        
+        if not self.flag_3 and self.flag_6 and self.eagle_list[0].center_x < 4078:
+            self.eagle_list[0].center_x += 3
+            self.eagle_list[0].center_y -= 2
+        elif not self.flag_3 and self.eagle_list[0].center_x >= 4078 and self.eagle_list[0].center_x < 4324:
+            self.eagle_list[0].center_x += 3
+        elif not self.flag_3 and self.eagle_list[0].center_x >= 4324 and self.eagle_list[0].center_x < 4702:
+            self.eagle_list[0].center_x += 3
+            self.eagle_list[0].center_y += 2
+        elif not self.flag_3 and self.eagle_list[0].center_x == 4702:
+            self.eagle_list[0].remove_from_sprite_lists()
+            self.eagle_list[0].center_x = 4702
+            self.flag_3 = True
+        elif self.flag_3 and self.eagle_list[0].center_x > 4324:
+            self.eagle_list[0].center_x -= 3
+            self.eagle_list[0].center_y -= 2
+        elif self.flag_3 and self.eagle_list[0].center_x > 4078 and self.eagle_list[0].center_x <= 4324:
+            self.eagle_list[0].center_x -= 3
+        elif self.flag_3 and self.eagle_list[0].center_x > 3700 and self.eagle_list[0].center_x <= 4078:
+            self.eagle_list[0].center_x -= 3
+            self.eagle_list[0].center_y += 2
+        elif self.flag_3 and self.eagle_list[0].center_x == 3700:
+            eagle_sprite = arcade.Sprite("./Resource/Images/eagle_2.png", 0.4)
+            eagle_sprite.center_x = 3700
+            eagle_sprite.center_y = 500
+            self.eagle_list.insert(0, eagle_sprite)
+            self.flag_3 = False
+        if self.player_sprite.center_x > 3900:
+            self.flag_6 = True
+        
+        if self.eagle_list[0].collides_with_sprite(self.player_sprite):
+            self.lifes -= 1
+            self.player_sprite.center_x = self.x
+            self.player_sprite.center_y = self.y
     def game_over(self):
         arcade.close_window()
         arcade.open_window(800, 600, 'Game Over')
@@ -515,6 +400,6 @@ class Level_8(arcade.Window):
             self.player_sprite.center_y - self.height / 2
         self.camera_sprites.move_to(position, 0.1)
         
-window = Level_8(800, 600, "Super Game")
+window = Level_9(800, 600, "Super Game")
 window.setup()
 arcade.run()
