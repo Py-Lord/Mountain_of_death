@@ -42,201 +42,201 @@ class Level_2(arcade.Window):
         self.player_sprite = arcade.AnimatedWalkingSprite() 
         self.player_sprite.center_x = self.x 
         self.player_sprite.center_y = self.y
-        self.player_sprite.stand_right_textures = [arcade.load_texture("./Resource/Images/Person.png")]
-        self.player_sprite.stand_left_textures = [arcade.load_texture("./Resource/Images/Person.png", mirrored=True)]  
+        self.player_sprite.stand_right_textures = [arcade.load_texture("./Resources/Images/Person.png")]
+        self.player_sprite.stand_left_textures = [arcade.load_texture("./Resources/Images/Person.png", mirrored=True)]  
         self.player_sprite.walk_right_textures = [
-            arcade.load_texture("./Resource/Images/walk.png"), 
-            arcade.load_texture("./Resource/Images/walk1.png"), 
-            arcade.load_texture("./Resource/Images/walk2.png"), 
-            arcade.load_texture("./Resource/Images/walk3.png"), 
-            arcade.load_texture("./Resource/Images/walk4.png"),
-            arcade.load_texture("./Resource/Images/walk5.png"), 
-            arcade.load_texture("./Resource/Images/walk6.png"), 
-            arcade.load_texture("./Resource/Images/walk7.png")]
+            arcade.load_texture("./Resources/Images/walk.png"), 
+            arcade.load_texture("./Resources/Images/walk1.png"), 
+            arcade.load_texture("./Resources/Images/walk2.png"), 
+            arcade.load_texture("./Resources/Images/walk3.png"), 
+            arcade.load_texture("./Resources/Images/walk4.png"),
+            arcade.load_texture("./Resources/Images/walk5.png"), 
+            arcade.load_texture("./Resources/Images/walk6.png"), 
+            arcade.load_texture("./Resources/Images/walk7.png")]
         self.player_sprite.walk_left_textures = [
-            arcade.load_texture("./Resource/Images/walk.png", mirrored=True), 
-            arcade.load_texture("./Resource/Images/walk1.png", mirrored=True), 
-            arcade.load_texture("./Resource/Images/walk2.png", mirrored=True), 
-            arcade.load_texture("./Resource/Images/walk3.png", mirrored=True), 
-            arcade.load_texture("./Resource/Images/walk4.png", mirrored=True),
-            arcade.load_texture("./Resource/Images/walk5.png", mirrored=True), 
-            arcade.load_texture("./Resource/Images/walk6.png", mirrored=True), 
-            arcade.load_texture("./Resource/Images/walk7.png", mirrored=True)]  
+            arcade.load_texture("./Resources/Images/walk.png", mirrored=True), 
+            arcade.load_texture("./Resources/Images/walk1.png", mirrored=True), 
+            arcade.load_texture("./Resources/Images/walk2.png", mirrored=True), 
+            arcade.load_texture("./Resources/Images/walk3.png", mirrored=True), 
+            arcade.load_texture("./Resources/Images/walk4.png", mirrored=True),
+            arcade.load_texture("./Resources/Images/walk5.png", mirrored=True), 
+            arcade.load_texture("./Resources/Images/walk6.png", mirrored=True), 
+            arcade.load_texture("./Resources/Images/walk7.png", mirrored=True)]  
         self.player_sprite.texture = self.player_sprite.stand_right_textures[0] 
         self.player_sprite.texture = self.player_sprite.stand_left_textures[0]
         self.player_sprite.scale = 0.5 
 
         for x in range(33, 4962, 64):
-            grass_sprite = arcade.Sprite("./Resource/Images/grass.png", 0.5)
+            grass_sprite = arcade.Sprite("./Resources/Images/grass.png", 0.5)
             grass_sprite.center_x = x
             grass_sprite.center_y = 90
             self.platforms_list.append(grass_sprite)
         for x in range(1155, 1348, 64):
-            grass_sprite = arcade.Sprite("./Resource/Images/grass.png", 0.5)
+            grass_sprite = arcade.Sprite("./Resources/Images/grass.png", 0.5)
             grass_sprite.center_x = x
             grass_sprite.center_y = 154
             self.platforms_list.append(grass_sprite)
         for x in range(2124, 2317, 64):
-            grass_sprite = arcade.Sprite("./Resource/Images/grass.png", 0.5)
+            grass_sprite = arcade.Sprite("./Resources/Images/grass.png", 0.5)
             grass_sprite.center_x = x
             grass_sprite.center_y = 154
             self.platforms_list.append(grass_sprite)
         for x in range(3105, 3298, 64):
-            grass_sprite = arcade.Sprite("./Resource/Images/grass.png", 0.5)
+            grass_sprite = arcade.Sprite("./Resources/Images/grass.png", 0.5)
             grass_sprite.center_x = x
             grass_sprite.center_y = 154
             self.platforms_list.append(grass_sprite)
 
         for x in range(33, 4962, 64):
-            ground_sprite = arcade.Sprite("./Resource/Images/ground.png", 0.5)
+            ground_sprite = arcade.Sprite("./Resources/Images/ground.png", 0.5)
             ground_sprite.center_x = x
             ground_sprite.center_y = 26
             self.platforms_list.append(ground_sprite)
         for i in range(0, 321, 64):
-            ground_sprite = arcade.Sprite("./Resource/Images/ground.png", 0.5)
+            ground_sprite = arcade.Sprite("./Resources/Images/ground.png", 0.5)
             ground_sprite.center_x = -31 - i
             ground_sprite.center_y = 26 - i
             self.platforms_list.append(ground_sprite)
         for i in range(0, 321, 64):
-            ground_sprite = arcade.Sprite("./Resource/Images/ground.png", 0.5)
+            ground_sprite = arcade.Sprite("./Resources/Images/ground.png", 0.5)
             ground_sprite.center_x = -31 - i
             ground_sprite.center_y = -38 - i
             self.platforms_list.append(ground_sprite)
         for i in range(0, 321, 64):
-            ground_sprite = arcade.Sprite("./Resource/Images/ground.png", 0.5)
+            ground_sprite = arcade.Sprite("./Resources/Images/ground.png", 0.5)
             ground_sprite.center_x = 33 - i
             ground_sprite.center_y = -38 - i
             self.platforms_list.append(ground_sprite)
         for i in range(0, 449, 64):
-            ground_sprite = arcade.Sprite("./Resource/Images/ground.png", 0.5)
+            ground_sprite = arcade.Sprite("./Resources/Images/ground.png", 0.5)
             ground_sprite.center_x = 5025 + i
             ground_sprite.center_y = 90 + i
             self.platforms_list.append(ground_sprite)
         for i in range(0, 449, 64):
-            ground_sprite = arcade.Sprite("./Resource/Images/ground.png", 0.5)
+            ground_sprite = arcade.Sprite("./Resources/Images/ground.png", 0.5)
             ground_sprite.center_x = 5025 + i
             ground_sprite.center_y = 26 + i
             self.platforms_list.append(ground_sprite)
         for i in range(0, 449, 64):
-            ground_sprite = arcade.Sprite("./Resource/Images/ground.png", 0.5)
+            ground_sprite = arcade.Sprite("./Resources/Images/ground.png", 0.5)
             ground_sprite.center_x = 5089 + i
             ground_sprite.center_y = 26 + i
             self.platforms_list.append(ground_sprite)
 
         self.physics_engine = arcade.PhysicsEnginePlatformer(self.player_sprite, self.platforms_list, gravity_constant=GRAVITY)
 
-        self.komar_sprite = arcade.Sprite("./Resource/Images/komar.png", 0.4)
+        self.komar_sprite = arcade.Sprite("./Resources/Images/komar.png", 0.4)
         self.komar_sprite.center_x = 1990
         self.komar_sprite.center_y = 186
-        komar_2_sprite = arcade.Sprite("./Resource/Images/komar_2.png", 0.4)
+        komar_2_sprite = arcade.Sprite("./Resources/Images/komar_2.png", 0.4)
         komar_2_sprite.center_x = 1490
         komar_2_sprite.center_y = 186
         self.komar_list.append(self.komar_sprite)
         self.komar_list.append(komar_2_sprite)
 
-        self.dragonfly_sprite = arcade.Sprite("./Resource/Images/dragonfly.png", 0.3)
+        self.dragonfly_sprite = arcade.Sprite("./Resources/Images/dragonfly.png", 0.3)
         self.dragonfly_sprite.center_x = 2450
         self.dragonfly_sprite.center_y = 164
         self.dragonfly_list.append(self.dragonfly_sprite)
-        dragonfly_2_sprite = arcade.Sprite("./Resource/Images/dragonfly_2.png", 0.3)
+        dragonfly_2_sprite = arcade.Sprite("./Resources/Images/dragonfly_2.png", 0.3)
         dragonfly_2_sprite.center_x = 2945
         dragonfly_2_sprite.center_y = 164
         self.dragonfly_list.append(dragonfly_2_sprite)
 
-        self.ant_sprite = arcade.Sprite("./Resource/Images/ant_2.png", 0.3)
+        self.ant_sprite = arcade.Sprite("./Resources/Images/ant_2.png", 0.3)
         self.ant_sprite.center_x = 3467
         self.ant_sprite.center_y = 154
         self.ant_list.append(self.ant_sprite)
-        ant_2_sprite = arcade.Sprite("./Resource/Images/ant.png", 0.3)
+        ant_2_sprite = arcade.Sprite("./Resources/Images/ant.png", 0.3)
         ant_2_sprite.center_x = 3968
         ant_2_sprite.center_y = 154
         self.ant_list.append(ant_2_sprite)
-        self.ant_sprite2 = arcade.Sprite("./Resource/Images/ant_2.png", 0.3)
+        self.ant_sprite2 = arcade.Sprite("./Resources/Images/ant_2.png", 0.3)
         self.ant_sprite2.center_x = 4032
         self.ant_sprite2.center_y = 154
         self.ant_list2.append(self.ant_sprite2)
-        ant_2_sprite2 = arcade.Sprite("./Resource/Images/ant.png", 0.3)
+        ant_2_sprite2 = arcade.Sprite("./Resources/Images/ant.png", 0.3)
         ant_2_sprite2.center_x = 4533
         ant_2_sprite2.center_y = 154
         self.ant_list2.append(ant_2_sprite2)
 
         for i in range(0, 577, 64):
-            coin_sprite = arcade.Sprite("./Resource/Images/gold.png", 0.5)
+            coin_sprite = arcade.Sprite("./Resources/Images/gold.png", 0.5)
             coin_sprite.center_x = 450 + i
             coin_sprite.center_y = 144
             self.coin_list.append(coin_sprite)
         for x in range(4629, 4822, 64):
-            coin_sprite = arcade.Sprite("./Resource/Images/gold.png", 0.5)
+            coin_sprite = arcade.Sprite("./Resources/Images/gold.png", 0.5)
             coin_sprite.center_x = x
             coin_sprite.center_y = 144
             self.coin_list.append(coin_sprite)
 
-        bonus_sprite = arcade.Sprite("./Resource/Images/star.png", 0.5)
+        bonus_sprite = arcade.Sprite("./Resources/Images/star.png", 0.5)
         bonus_sprite.center_x = 2284
         bonus_sprite.center_y = 208
         self.bonus_list.append(bonus_sprite)
         
-        grass_hill_sprite = arcade.Sprite("./Resource/Images/grass_hill.png", 0.5)
+        grass_hill_sprite = arcade.Sprite("./Resources/Images/grass_hill.png", 0.5)
         grass_hill_sprite.center_x = 1091
         grass_hill_sprite.center_y = 154
         self.platforms_list.append(grass_hill_sprite)
-        grass_hill_sprite = arcade.Sprite("./Resource/Images/grasshill.png", 0.5)
+        grass_hill_sprite = arcade.Sprite("./Resources/Images/grasshill.png", 0.5)
         grass_hill_sprite.center_x = 1411
         grass_hill_sprite.center_y = 154
         self.platforms_list.append(grass_hill_sprite)
-        grass_hill_sprite = arcade.Sprite("./Resource/Images/grass_hill.png", 0.5)
+        grass_hill_sprite = arcade.Sprite("./Resources/Images/grass_hill.png", 0.5)
         grass_hill_sprite.center_x = 2060
         grass_hill_sprite.center_y = 154
         self.platforms_list.append(grass_hill_sprite)
-        grass_hill_sprite = arcade.Sprite("./Resource/Images/grasshill.png", 0.5)
+        grass_hill_sprite = arcade.Sprite("./Resources/Images/grasshill.png", 0.5)
         grass_hill_sprite.center_x = 2380
         grass_hill_sprite.center_y = 154
         self.platforms_list.append(grass_hill_sprite)
-        grass_hill_sprite = arcade.Sprite("./Resource/Images/grass_hill.png", 0.5)
+        grass_hill_sprite = arcade.Sprite("./Resources/Images/grass_hill.png", 0.5)
         grass_hill_sprite.center_x = 3041
         grass_hill_sprite.center_y = 154
         self.platforms_list.append(grass_hill_sprite)
-        grass_hill_sprite = arcade.Sprite("./Resource/Images/grasshill.png", 0.5)
+        grass_hill_sprite = arcade.Sprite("./Resources/Images/grasshill.png", 0.5)
         grass_hill_sprite.center_x = 3361
         grass_hill_sprite.center_y = 154
         self.platforms_list.append(grass_hill_sprite)
         for i in range(0, 321, 64):
-            grass_hill_sprite = arcade.Sprite("./Resource/Images/grass_hill.png", 0.5)
+            grass_hill_sprite = arcade.Sprite("./Resources/Images/grass_hill.png", 0.5)
             grass_hill_sprite.center_x = -31 - i
             grass_hill_sprite.center_y = 90 - i
             self.platforms_list.append(grass_hill_sprite)
         for i in range(0, 385, 64):
-            grass_hill_sprite = arcade.Sprite("./Resource/Images/grass_hill.png", 0.5)
+            grass_hill_sprite = arcade.Sprite("./Resources/Images/grass_hill.png", 0.5)
             grass_hill_sprite.center_x = 5025 + i
             grass_hill_sprite.center_y = 154 + i
             self.platforms_list.append(grass_hill_sprite)
 
-        self.FLAG = arcade.Sprite("./Resource/Images/flagRed.png", 0.5)
+        self.FLAG = arcade.Sprite("./Resources/Images/flagRed.png", 0.5)
         self.FLAG.center_x = 1161
         self.FLAG.center_y = 218
         self.flags_list.append(self.FLAG)
-        Flag = arcade.Sprite("./Resource/Images/flagRed1.png", 0.5)
+        Flag = arcade.Sprite("./Resources/Images/flagRed1.png", 0.5)
         Flag.center_x = 1161
         Flag.center_y = 218
         self.flags_list.append(Flag)
-        self.FLAG2 = arcade.Sprite("./Resource/Images/flagRed.png", 0.5)
+        self.FLAG2 = arcade.Sprite("./Resources/Images/flagRed.png", 0.5)
         self.FLAG2.center_x = 2130
         self.FLAG2.center_y = 218
         self.flags_list2.append(self.FLAG2)
-        Flag2 = arcade.Sprite("./Resource/Images/flagRed1.png", 0.5)
+        Flag2 = arcade.Sprite("./Resources/Images/flagRed1.png", 0.5)
         Flag2.center_x = 2130
         Flag2.center_y = 218
         self.flags_list2.append(Flag2)
-        self.FLAG3 = arcade.Sprite("./Resource/Images/flagRed.png", 0.5)
+        self.FLAG3 = arcade.Sprite("./Resources/Images/flagRed.png", 0.5)
         self.FLAG3.center_x = 3111
         self.FLAG3.center_y = 218
         self.flags_list3.append(self.FLAG3)
-        Flag3 = arcade.Sprite("./Resource/Images/flagRed1.png", 0.5)
+        Flag3 = arcade.Sprite("./Resources/Images/flagRed1.png", 0.5)
         Flag3.center_x = 3111
         Flag3.center_y = 218
         self.flags_list3.append(Flag3)
 
-        self.exit_sprite = arcade.Sprite("./Resource/Images/exit.png", 0.5)
+        self.exit_sprite = arcade.Sprite("./Resources/Images/exit.png", 0.5)
         self.exit_sprite.center_x = 4917
         self.exit_sprite.center_y = 154
     def on_draw(self):
@@ -293,7 +293,7 @@ class Level_2(arcade.Window):
         if self.flag == True and self.komar_list[0].center_x >= 1490 and self.komar_list[0].center_x < 1990:
             self.komar_list[0].center_x = self.komar_list[0].center_x + 2
         elif self.flag == True and self.komar_list[0].center_x == 1990:
-            self.komar_sprite = arcade.Sprite("./Resource/Images/komar.png", 0.4)
+            self.komar_sprite = arcade.Sprite("./Resources/Images/komar.png", 0.4)
             self.komar_sprite.center_x = 1990
             self.komar_sprite.center_y = 186
             self.komar_list.insert(0, self.komar_sprite)
@@ -302,7 +302,7 @@ class Level_2(arcade.Window):
         if self.player_sprite.collides_with_sprite(self.komar_list[0]) and self.player_sprite.center_y >= 217 and self.flag != 'Kill':
             self.flag = 'Kill'
             self.player_sprite.change_y = 8
-            coin_sprite = arcade.Sprite("./Resource/Images/gold.png", 0.5)
+            coin_sprite = arcade.Sprite("./Resources/Images/gold.png", 0.5)
             coin_sprite.center_x = self.komar_list[0].center_x + 80 
             coin_sprite.center_y = 144 
             self.coin_list.append(coin_sprite)
@@ -320,7 +320,7 @@ class Level_2(arcade.Window):
         if self.flag_2 == True and self.dragonfly_list[0].center_x >= 2450 and self.dragonfly_list[0].center_x < 2945:
             self.dragonfly_list[0].center_x = self.dragonfly_list[0].center_x + 3
         elif self.flag_2 == True and self.dragonfly_list[0].center_x == 2945:
-            self.dragonfly_sprite = arcade.Sprite("./Resource/Images/dragonfly.png", 0.3)
+            self.dragonfly_sprite = arcade.Sprite("./Resources/Images/dragonfly.png", 0.3)
             self.dragonfly_sprite.center_x = 2945
             self.dragonfly_sprite.center_y = 164
             self.dragonfly_list.insert(0, self.dragonfly_sprite)
@@ -332,11 +332,11 @@ class Level_2(arcade.Window):
         elif self.player_sprite.collides_with_sprite(self.dragonfly_list[0]) and self.player_sprite.center_y >= 222 and self.flag_2 != 'Kill' and self.score_2 == 2:
             self.flag_2 = 'Kill'
             self.player_sprite.change_y = 8
-            coin_sprite = arcade.Sprite("./Resource/Images/gold.png", 0.5)
+            coin_sprite = arcade.Sprite("./Resources/Images/gold.png", 0.5)
             coin_sprite.center_x = self.dragonfly_list[0].center_x + 80 
             coin_sprite.center_y = 144 
             self.coin_list.append(coin_sprite)
-            coin_sprite = arcade.Sprite("./Resource/Images/gold.png", 0.5)
+            coin_sprite = arcade.Sprite("./Resources/Images/gold.png", 0.5)
             coin_sprite.center_x = self.dragonfly_list[0].center_x + 100 
             coin_sprite.center_y = 144
             self.coin_list.append(coin_sprite)
@@ -354,7 +354,7 @@ class Level_2(arcade.Window):
         if self.flag_3 == True and self.ant_list[0].center_x >= 3467 and self.ant_list[0].center_x < 3968:
             self.ant_list[0].center_x = self.ant_list[0].center_x + 3
         elif self.flag_3 == True and self.ant_list[0].center_x == 3968:
-            self.ant_sprite = arcade.Sprite("./Resource/Images/ant_2.png", 0.3)
+            self.ant_sprite = arcade.Sprite("./Resources/Images/ant_2.png", 0.3)
             self.ant_sprite.center_x = 3968
             self.ant_sprite.center_y = 154
             self.ant_list.insert(0, self.ant_sprite)
@@ -366,11 +366,11 @@ class Level_2(arcade.Window):
         elif self.player_sprite.collides_with_sprite(self.ant_list[0]) and self.player_sprite.center_y >= 210 and self.flag_3 != 'Kill' and self.score_3 == 2:
             self.flag_3 = 'Kill'
             self.player_sprite.change_y = 8
-            coin_sprite = arcade.Sprite("./Resource/Images/gold.png", 0.5)
+            coin_sprite = arcade.Sprite("./Resources/Images/gold.png", 0.5)
             coin_sprite.center_x = self.ant_list[0].center_x + 80 
             coin_sprite.center_y = 144 
             self.coin_list.append(coin_sprite)
-            coin_sprite = arcade.Sprite("./Resource/Images/gold.png", 0.5)
+            coin_sprite = arcade.Sprite("./Resources/Images/gold.png", 0.5)
             coin_sprite.center_x = self.ant_list[0].center_x + 100 
             coin_sprite.center_y = 144
             self.coin_list.append(coin_sprite)
@@ -388,7 +388,7 @@ class Level_2(arcade.Window):
         if self.flag_6 == True and self.ant_list2[0].center_x >= 4032 and self.ant_list2[0].center_x < 4533:
             self.ant_list2[0].center_x = self.ant_list2[0].center_x + 3
         elif self.flag_6 == True and self.ant_list2[0].center_x == 4533:
-            self.ant_sprite2 = arcade.Sprite("./Resource/Images/ant_2.png", 0.3)
+            self.ant_sprite2 = arcade.Sprite("./Resources/Images/ant_2.png", 0.3)
             self.ant_sprite2.center_x = 4533
             self.ant_sprite2.center_y = 154
             self.ant_list2.insert(0, self.ant_sprite2)
@@ -400,11 +400,11 @@ class Level_2(arcade.Window):
         elif self.player_sprite.collides_with_sprite(self.ant_list2[0]) and self.player_sprite.center_y >= 210 and self.flag_6 != 'Kill' and self.score_4 == 2:
             self.flag_6 = 'Kill'
             self.player_sprite.change_y = 8
-            coin_sprite = arcade.Sprite("./Resource/Images/gold.png", 0.5)
+            coin_sprite = arcade.Sprite("./Resources/Images/gold.png", 0.5)
             coin_sprite.center_x = self.ant_list2[0].center_x - 80 
             coin_sprite.center_y = 144 
             self.coin_list.append(coin_sprite)
-            coin_sprite = arcade.Sprite("./Resource/Images/gold.png", 0.5)
+            coin_sprite = arcade.Sprite("./Resources/Images/gold.png", 0.5)
             coin_sprite.center_x = self.ant_list2[0].center_x - 100 
             coin_sprite.center_y = 144
             self.coin_list.append(coin_sprite)
@@ -434,9 +434,9 @@ class Level_2(arcade.Window):
             arcade.open_window(800, 600, 'Game Over')
             arcade.start_render()
             arcade.set_background_color(arcade.color.BLACK)
-            game_over = arcade.load_texture('./Resource/Images/game_over.png')
+            game_over = arcade.load_texture('./Resources/Images/game_over.png')
             game_over.draw_sized(400, 300, 400, 300)
-            game_over_sound =  arcade.load_sound('./Resource/Sound effects/game-over.mp3')
+            game_over_sound =  arcade.load_sound('./Resources/Sound effects/game-over.mp3')
             arcade.play_sound(game_over_sound, volume = 2)
             arcade.finish_render()
             arcade.run()

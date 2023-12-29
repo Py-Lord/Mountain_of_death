@@ -12,6 +12,7 @@ class Level_10(arcade.Window):
 
         self.flag = False
         self.flag_2 = False
+        self.flag_3 = False
         self.lifes = 3
         self.score = 0 
         self.score_2 = 1
@@ -30,68 +31,68 @@ class Level_10(arcade.Window):
         self.player_sprite = arcade.AnimatedWalkingSprite() 
         self.player_sprite.center_x = self.x 
         self.player_sprite.center_y = self.y
-        self.player_sprite.stand_right_textures = [arcade.load_texture("./Resource/Images/Person.png")]
-        self.player_sprite.stand_left_textures = [arcade.load_texture("./Resource/Images/Person.png", mirrored=True)]  
+        self.player_sprite.stand_right_textures = [arcade.load_texture("./Resources/Images/Person.png")]
+        self.player_sprite.stand_left_textures = [arcade.load_texture("./Resources/Images/Person.png", mirrored=True)]  
         self.player_sprite.walk_right_textures = [
-            arcade.load_texture("./Resource/Images/walk.png"), 
-            arcade.load_texture("./Resource/Images/walk1.png"), 
-            arcade.load_texture("./Resource/Images/walk2.png"), 
-            arcade.load_texture("./Resource/Images/walk3.png"), 
-            arcade.load_texture("./Resource/Images/walk4.png"),
-            arcade.load_texture("./Resource/Images/walk5.png"), 
-            arcade.load_texture("./Resource/Images/walk6.png"), 
-            arcade.load_texture("./Resource/Images/walk7.png")]
+            arcade.load_texture("./Resources/Images/walk.png"), 
+            arcade.load_texture("./Resources/Images/walk1.png"), 
+            arcade.load_texture("./Resources/Images/walk2.png"), 
+            arcade.load_texture("./Resources/Images/walk3.png"), 
+            arcade.load_texture("./Resources/Images/walk4.png"),
+            arcade.load_texture("./Resources/Images/walk5.png"), 
+            arcade.load_texture("./Resources/Images/walk6.png"), 
+            arcade.load_texture("./Resources/Images/walk7.png")]
         self.player_sprite.walk_left_textures = [
-            arcade.load_texture("./Resource/Images/walk.png", mirrored=True), 
-            arcade.load_texture("./Resource/Images/walk1.png", mirrored=True), 
-            arcade.load_texture("./Resource/Images/walk2.png", mirrored=True), 
-            arcade.load_texture("./Resource/Images/walk3.png", mirrored=True), 
-            arcade.load_texture("./Resource/Images/walk4.png", mirrored=True),
-            arcade.load_texture("./Resource/Images/walk5.png", mirrored=True), 
-            arcade.load_texture("./Resource/Images/walk6.png", mirrored=True), 
-            arcade.load_texture("./Resource/Images/walk7.png", mirrored=True)]  
+            arcade.load_texture("./Resources/Images/walk.png", mirrored=True), 
+            arcade.load_texture("./Resources/Images/walk1.png", mirrored=True), 
+            arcade.load_texture("./Resources/Images/walk2.png", mirrored=True), 
+            arcade.load_texture("./Resources/Images/walk3.png", mirrored=True), 
+            arcade.load_texture("./Resources/Images/walk4.png", mirrored=True),
+            arcade.load_texture("./Resources/Images/walk5.png", mirrored=True), 
+            arcade.load_texture("./Resources/Images/walk6.png", mirrored=True), 
+            arcade.load_texture("./Resources/Images/walk7.png", mirrored=True)]  
         self.player_sprite.texture = self.player_sprite.stand_right_textures[0] 
         self.player_sprite.texture = self.player_sprite.stand_left_textures[0]
         self.player_sprite.scale = 0.5
 
         for x in range(33, 2177, 64):
-            snow_grass = arcade.Sprite("./Resource/Images/snow_grass.png", 0.92)
+            snow_grass = arcade.Sprite("./Resources/Images/snow_grass.png", 0.92)
             snow_grass.center_x = x
             snow_grass.center_y = 90
             self.platforms_list.append(snow_grass)
         for x in range(3233, 5000, 64):
-            snow_ground = arcade.Sprite("./Resource/Images/snow_grass.png", 0.92)
+            snow_ground = arcade.Sprite("./Resources/Images/snow_grass.png", 0.92)
             snow_ground.center_x = x
             snow_ground.center_y = -934
             self.platforms_list.append(snow_ground)
         for x in range(33,  2177, 64):
-            snow_ground = arcade.Sprite("./Resource/Images/snow_ground.png", 0.92)
+            snow_ground = arcade.Sprite("./Resources/Images/snow_ground.png", 0.92)
             snow_ground.center_x = x
             snow_ground.center_y = 26
             self.platforms_list.append(snow_ground)
 
         for i in range(0, 321, 64):
-            ground_sprite = arcade.Sprite("./Resource/Images/ground.png", 0.5)
+            ground_sprite = arcade.Sprite("./Resources/Images/ground.png", 0.5)
             ground_sprite.center_x = -31 - i
             ground_sprite.center_y = -38 - i
             self.platforms_list.append(ground_sprite)
         for i in range(0, 321, 64):
-            ground_sprite = arcade.Sprite("./Resource/Images/ground.png", 0.5)
+            ground_sprite = arcade.Sprite("./Resources/Images/ground.png", 0.5)
             ground_sprite.center_x = 33 - i
             ground_sprite.center_y = -38 - i
             self.platforms_list.append(ground_sprite)
         for i in range(0, 449, 64):
-            ground_sprite = arcade.Sprite("./Resource/Images/ground.png", 0.5)
+            ground_sprite = arcade.Sprite("./Resources/Images/ground.png", 0.5)
             ground_sprite.center_x = 5025 + i
             ground_sprite.center_y = 90 + i
             self.platforms_list.append(ground_sprite)
         for i in range(0, 449, 64):
-            ground_sprite = arcade.Sprite("./Resource/Images/ground.png", 0.5)
+            ground_sprite = arcade.Sprite("./Resources/Images/ground.png", 0.5)
             ground_sprite.center_x = 5025 + i
             ground_sprite.center_y = 26 + i
             self.platforms_list.append(ground_sprite)
         for i in range(0, 449, 64):
-            ground_sprite = arcade.Sprite("./Resource/Images/ground.png", 0.5)
+            ground_sprite = arcade.Sprite("./Resources/Images/ground.png", 0.5)
             ground_sprite.center_x = 5089 + i
             ground_sprite.center_y = 26 + i
             self.platforms_list.append(ground_sprite)
@@ -99,73 +100,73 @@ class Level_10(arcade.Window):
         self.physics_engine = arcade.PhysicsEnginePlatformer(self.player_sprite, self.platforms_list, gravity_constant = GRAVITY)
 
         for i in range(0, 321, 64):
-            grass_hill_sprite = arcade.Sprite("./Resource/Images/grass_hill.png", 0.5)
+            grass_hill_sprite = arcade.Sprite("./Resources/Images/grass_hill.png", 0.5)
             grass_hill_sprite.center_x = -31 - i
             grass_hill_sprite.center_y = 90 - i
             self.platforms_list.append(grass_hill_sprite)
         for i in range(0, 321, 64):
-            ground_sprite = arcade.Sprite("./Resource/Images/grass_hill_1.png", 0.5)
+            ground_sprite = arcade.Sprite("./Resources/Images/grass_hill_1.png", 0.5)
             ground_sprite.center_x = -31 - i
             ground_sprite.center_y = 26 - i
             self.platforms_list.append(ground_sprite)
 
         for x in range(1000, 1321, 64):
-            snowdrift_sprite = arcade.Sprite("./Resource/images/snowdrift.png", 0.92)
+            snowdrift_sprite = arcade.Sprite("./Resources/images/snowdrift.png", 0.92)
             snowdrift_sprite.center_x = x
             snowdrift_sprite.center_y = 154
             self.platforms_list.append(snowdrift_sprite)
-        snowdrift_hill = arcade.Sprite("./Resource/images/snowdrift_hill.png", 0.92)
+        snowdrift_hill = arcade.Sprite("./Resources/images/snowdrift_hill.png", 0.92)
         snowdrift_hill.center_x = 936
         snowdrift_hill.center_y = 154
         self.platforms_list.append(snowdrift_hill) 
-        snowdrift_hill = arcade.Sprite("./Resource/images/snowdrift_hill_2.png", 0.92)
+        snowdrift_hill = arcade.Sprite("./Resources/images/snowdrift_hill_2.png", 0.92)
         snowdrift_hill.center_x = 1384
         snowdrift_hill.center_y = 154
         self.platforms_list.append(snowdrift_hill)
 
         for i in range(0, 1000, 64):
-            snow_hill = arcade.Sprite("./Resource/images/snowhill.png", 0.92)
+            snow_hill = arcade.Sprite("./Resources/images/snowhill.png", 0.92)
             snow_hill.center_x = 2209 + i 
             snow_hill.center_y = 90 - i
             self.platforms_list.append(snow_hill) 
         for i in range(0, 1000, 64):
-            snow_hill = arcade.Sprite("./Resource/images/snow_hill_1.png", 0.92)
+            snow_hill = arcade.Sprite("./Resources/images/snow_hill_1.png", 0.92)
             snow_hill.center_x = 2209 + i 
             snow_hill.center_y = 26 - i
             self.platforms_list.append(snow_hill) 
         for i in range(0, 1000, 64):
-            snow_hill = arcade.Sprite("./Resource/images/snow_ground.png", 0.92)
+            snow_hill = arcade.Sprite("./Resources/images/snow_ground.png", 0.92)
             snow_hill.center_x = 2209 + i 
             snow_hill.center_y = -38 - i
             self.platforms_list.append(snow_hill) 
 
-        self.exit_sprite = arcade.Sprite("./Resource/Images/exit.png", 0.5)
+        self.exit_sprite = arcade.Sprite("./Resources/Images/exit.png", 0.5)
         self.exit_sprite.center_x = 4917
         self.exit_sprite.center_y = 154
 
-        self.snowman = arcade.Sprite("./Resource/images/snowman.png", 0.5)
+        self.snowman = arcade.Sprite("./Resources/images/snowman.png", 0.5)
         self.snowman.center_x = 1160
         self.snowman.center_y = 284
 
         for i in range(120):
-            snow_ball = arcade.Sprite("./Resource/images/snow_ball.png", 0.05)
+            snow_ball = arcade.Sprite("./Resources/images/snow_ball.png", 0.05)
             snow_ball.center_x = 1061
             snow_ball.center_y = 306
             self.snow_balls.append(snow_ball)
         
-        self.snow_ball_big = arcade.Sprite("./Resource/images/snow_ball_big.png", 1.5)
+        self.snow_ball_big = arcade.Sprite("./Resources/images/snow_ball_big.png", 1.5)
         self.snow_ball_big.center_x = 2050
         self.snow_ball_big.center_y = 173
-        snow_ball_half = arcade.Sprite("./Resource/images/snow_ball_half.png", 1.5, angle = 100)
+        snow_ball_half = arcade.Sprite("./Resources/images/snow_ball_half.png", 1.5, angle = 100)
         snow_ball_half.center_x = 4022
         snow_ball_half.center_y = -860
-        snow_ball_half_2 = arcade.Sprite("./Resource/images/snow_ball_half.png", 1.5, angle = -460)
+        snow_ball_half_2 = arcade.Sprite("./Resources/images/snow_ball_half.png", 1.5, angle = -460)
         snow_ball_half_2.center_x = 4164
         snow_ball_half_2.center_y = -860
         self.snow_ball_list.append(snow_ball_half)
         self.snow_ball_list.append(snow_ball_half_2)
 
-        self.gem_sprite = arcade.Sprite("./Resource/images/gem.png", 0.3)
+        self.gem_sprite = arcade.Sprite("./Resources/images/gem.png", 0.3)
         self.gem_sprite.center_x = 4093
         self.gem_sprite.center_y = -860
     def on_draw(self):
@@ -200,13 +201,6 @@ class Level_10(arcade.Window):
         
         if self.lifes == 0:
             self.game_over()
-
-        if self.player_sprite.center_x <= -130:
-            self.close()
-            from level_9 import Level_9
-        elif self.player_sprite.center_x >= 5079:
-            self.close()
-            #from level_11 import Level_11
         
         if self.flag == True:
             if self.snow_balls[6].center_x >= self.player_sprite.center_x:
@@ -286,15 +280,15 @@ class Level_10(arcade.Window):
             self.player_sprite.change_y = 8
         elif self.player_sprite.collides_with_sprite(self.snowman) and self.flag == 'kill' and self.player_sprite.center_y > 395:
             self.platforms_list.append(self.snowman)
-        if self.flag == 'kill' and self.snowman.center_y <= 1500 and self.player_sprite.center_y >= 154:
+        if self.flag == 'kill' and self.snowman.center_y <= 1500 and not self.flag_3:
             self.snowman.center_y += 0.3
             self.snowman.center_x += 1
         
         if self.player_sprite.collides_with_sprite(self.snow_ball_big):
             self.player_sprite.change_y = 8
-        if self.player_sprite.center_x >= 2300:
+        if self.player_sprite.center_x >= 2300 and self.flag_2 == False:
             self.flag_2 = True
-        if self.flag_2:
+        if self.flag_2 == True:
             if self.snow_ball_big.center_x >= 2180 and self.snow_ball_big.center_x < 3215:
                 self.snow_ball_big.center_x += 3
                 self.snow_ball_big.center_y -= 3
@@ -319,16 +313,59 @@ class Level_10(arcade.Window):
                 self.snow_ball_big.change_angle = -0.5
             else:
                 self.snow_ball_big.center_y = -1000         
-                self.snowman.center_y -= 1
-                self.snowman.center_x += 1
+                self.platforms_list.extend(self.snow_ball_list)
+                self.flag_2 = 'kill'
+        
+        if self.player_sprite.collides_with_sprite(self.gem_sprite) and self.snow_ball_big.center_x == 4100:
+            self.score += 300
+            self.gem_sprite.center_y = 1000
+            self.snowman.center_x = 4700
+            self.snowman.center_y = -300
+            #arcade.set_background_color((77, 143, 220))
+            self.flag_3 = True
+
+        if self.flag_3 == True and self.snowman.center_y > -805:
+            self.snowman.center_y -= 1
+        elif self.flag_3 == True and self.snowman.center_y == -805:
+            if self.platforms_list[-1].angle < -450:
+                self.platforms_list[-1].change_angle = 0.1
+                self.platforms_list[-2].change_angle = -0.1
+            else:
+                self.platforms_list[-1].change_angle = 0
+                self.platforms_list[-2].change_angle = 0
+                if self.platforms_list[-1].center_x > 4145:
+                    self.platforms_list[-1].center_x -= 0.1
+                    self.platforms_list[-2].center_x += 0.1
+                else:
+                    if self.platforms_list[-1].center_y < -700:
+                        self.platforms_list[-1].center_y += 1
+                        self.platforms_list[-2].center_y += 1
+                    else:    
+                        self.flag_3 = 'kill'
+        
+        if self.flag_3 == 'kill':
+            if self.platforms_list[-1].center_x < self.player_sprite.center_x and self.platforms_list[-1].center_y > -860:
+                self.platforms_list[-1].center_x += 3
+                self.platforms_list[-2].center_x += 3
+                self.platforms_list[-1].center_y -= 2
+                self.platforms_list[-2].center_y -= 2
+            elif self.platforms_list[-1].center_x >= self.player_sprite.center_x and self.platforms_list[-1].center_y > -860:
+                self.platforms_list[-1].center_y -= 2
+                self.platforms_list[-2].center_y -= 2
+            elif self.platforms_list[-1].center_x < self.player_sprite.center_x and self.platforms_list[-1].center_y == -860:
+                self.platforms_list[-1].center_x += 3
+                self.platforms_list[-2].center_x += 3
+            if self.platforms_list[-1].collides_with_sprite(self.player_sprite) or self.platforms_list[-2].collides_with_sprite(self.player_sprite):
+                self.platforms_list[-1].remove_from_sprite_lists()
+                self.platforms_list[-1].remove_from_sprite_lists()
     def game_over(self):
         arcade.close_window()
         arcade.open_window(800, 600, 'Game Over')
         arcade.start_render()
         arcade.set_background_color(arcade.color.BLACK)
-        game_over = arcade.load_texture('./Resource/Images/game_over.png')
+        game_over = arcade.load_texture('./Resources/Images/game_over.png')
         game_over.draw_sized(400, 300, 400, 300)
-        game_over_sound =  arcade.load_sound('./Resource/Sound effects/game-over.mp3')
+        game_over_sound =  arcade.load_sound('./Resources/Sound effects/game-over.mp3')
         arcade.play_sound(game_over_sound, volume = 2)
         arcade.finish_render()
         arcade.run()
